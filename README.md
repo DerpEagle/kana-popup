@@ -25,8 +25,8 @@ A macOS app that helps you learn hiragana and katakana through daily popup quizz
    ```
 3. Copy the LaunchAgent for automatic startup:
    ```bash
-   cp com.glenna.japansk-oving.plist ~/Library/LaunchAgents/
-   launchctl load ~/Library/LaunchAgents/com.glenna.japansk-oving.plist
+   cp com.japanese-quiz.plist ~/Library/LaunchAgents/
+   launchctl load ~/Library/LaunchAgents/com.japanese-quiz.plist
    ```
 4. (Optional) Add a shortcut command — name it whatever you like:
    ```bash
