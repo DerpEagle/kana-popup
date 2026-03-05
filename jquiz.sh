@@ -11,13 +11,15 @@
 
 PAUSE_FILE="$HOME/.japansk-quiz-pause"
 
-if [ "$1" = "av" ]; then
+CMD_NAME="$(basename "$0")"
+
+if [ "$1" = "av" ] || [ "$1" = "off" ]; then
     touch "$PAUSE_FILE"
-    echo "Quiz paused. Run 'øving på' to resume."
-elif [ "$1" = "på" ]; then
+    echo "Quiz paused. Run '$CMD_NAME on' to resume."
+elif [ "$1" = "på" ] || [ "$1" = "on" ]; then
     rm -f "$PAUSE_FILE"
     echo "Quiz resumed!"
-elif [ "$1" = "nå" ]; then
+elif [ "$1" = "nå" ] || [ "$1" = "now" ]; then
     SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
     "$SCRIPT_DIR/quiz.sh" &
     echo "Starting quiz..."
@@ -28,5 +30,5 @@ elif [ "$1" = "status" ]; then
         echo "Quiz is ACTIVE"
     fi
 else
-    echo "Usage: øving [nå|av|på|status]"
+    echo "Usage: $CMD_NAME [now|off|on|status]"
 fi

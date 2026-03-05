@@ -28,23 +28,23 @@ A macOS app that helps you learn hiragana and katakana through daily popup quizz
    cp com.glenna.japansk-oving.plist ~/Library/LaunchAgents/
    launchctl load ~/Library/LaunchAgents/com.glenna.japansk-oving.plist
    ```
-4. (Optional) Add the `øving` command:
+4. (Optional) Add a shortcut command — name it whatever you like:
    ```bash
    mkdir -p ~/bin
-   ln -s "/full/path/to/jquiz.sh" ~/bin/øving
+   ln -s "/full/path/to/jquiz.sh" ~/bin/quiz
    echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
    ```
 
 ## Usage
 
-The quiz starts automatically. For manual control:
+The quiz starts automatically. For manual control, use the shortcut you created in step 4:
 
 | Command | Description |
 |---|---|
-| `øving nå` | Start a quiz right now |
-| `øving av` | Pause the quiz |
-| `øving på` | Resume the quiz |
-| `øving status` | Check if the quiz is active or paused |
+| `quiz now` | Start a quiz right now |
+| `quiz off` | Pause the quiz |
+| `quiz on` | Resume the quiz |
+| `quiz status` | Check if the quiz is active or paused |
 
 ## Settings
 
@@ -73,4 +73,4 @@ Active hours and intervals can be changed in `quiz-loop.sh`:
 
 ## License
 
-[GNU General Public License v3.0](LICENSE)
+[MIT License](LICENSE)
